@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    background-color: #000000;
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 18px;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    text-transform: uppercase;
+    width: 100%;
+    color: black;
+}
+
+button {
+    background-color: #E9AC2F;
+    color: black;
+    border-radius: 5%;
+    height: 30px;
+    width: 140px;
+}
+
+header {
+    background-color: #E9AC2F;
+    height: 100px;
+    font-family: 'Base Neue Trial';
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.contenedor-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100px;
+}
+
+.contenedor-header-item2 {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+}
+
+.contenedor-header-item3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.busqueda-imagen {
+    height: 30px;
+}
+
+
+
+
+.slide {
+    height: 100%;
+    width: 180px;
+    position: absolute;
+    background-color: #E9AC2F;
+    transition: 0.5s ease;
+    transform: translateX(-180px);
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    color: #000000;
+    display: block;
+}
+
+.list-item1{
+    margin-top: 150px;
+}
+
+.logo {
+    height: 30px;
+}
+
+
+
+
+
+input {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    background-color: aliceblue;
+}
+
+.toggle {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 35px;
+    left: 30px;
+    background-color: #E9AC2F;
+    z-index: 3;
+}
+
+.toggle .common {
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #000000;
+    transition: 0.3s ease;
+}
+
+.toggle .top_line {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle .middle_line {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle .bottom_line {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input:checked ~ .toggle .top_line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+
+input:checked ~ .toggle .bottom_line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+input:checked ~ .toggle .middle_line {
+    opacity: 0;
+    transform: translate(20px);
+}
+
+input:checked ~ .slide {
+    transform: translateX(0);
+}
+
+.input-checkbox {
+    display: none;
+}
+
+.contenedor-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-top: -15px;
+    height: 70px;
+    background-color: #a47923;
+}
+
+.contenedor-nav-item1, .contenedor-nav-item2, .contenedor-nav-item3 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.muro {
+    color: beige;
+    background-color: #0f0f0f;
+    height: 100%;
+}
+
+.carrousel-incrementable {
+    display: grid;
+    height: 200px;
+    width: 150px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.carrousel-incrementable2 {
+    display: grid;
+    height: 200px;
+    width: 150px;
+    background-color: white;
+    margin-top: 10px;
+}
