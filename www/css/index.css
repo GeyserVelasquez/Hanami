@@ -16,40 +16,32 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    box-sizing: border-box;
 }
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(to bottom, #A7A7A7 0%, #E4E4E4 51%);
+    background-color:#1d1d1d;
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-    font-size:12px;
+    font-size:18px;
     height:100vh;
     margin:0px;
     padding:0px;
+
     /* Padding to avoid the "unsafe" areas behind notches in the screen */
     padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
     text-transform:uppercase;
     width:100%;
+    color: black;
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
+
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
@@ -61,50 +53,154 @@ body {
     }
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+button {
+    background-color: #E9AC2F;
+    color: black;
+    border-radius: 5%;
+    height: 30px;
+    width: 140px;
+    
 }
 
-.event {
-    border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+header {
+    background-color: #E9AC2F;
+    height: 100px;
+    font-family: 'Base Neue Trial';
+    border-bottom-right-radius:  20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+    z-index: 1;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
+.header-div-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 30px 4fr;
+    grid-template-areas: "item1 item2 item3 ";
+    height: 100px;
+    margin: auto;
+    max-width: 100vw;
+    color: black;
 }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
+.header-div-contenedor-item1, .header-div-contenedor-item2, .header-div-contenedor-item3 {
+    display: flex;
 }
 
-#deviceready.ready .event.listening { display: none; }
-#deviceready.ready .event.received { display: block; }
+.header-div-contenedor-item1 {
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 5%;
+    grid-template-areas: item1;
+    /* detalles fuente */
+    font-size: 30px;
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+
 }
 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+.header-div-contenedor-item2 {
+    align-items: center; 
+    justify-content: flex-start;
+    grid-template-areas: item2;
+}
+
+.header-div-contenedor-item3 {
+    align-items: center;
+    justify-content: flex-end;
+    grid-template-areas: item3;
+    padding-left: 5% ;
+    /* detalles fuente */
+    font-size: 10px;
+    color: black;
+}
+
+.logo {
+    height: 30px;
+}
+
+section {
+    max-width: 375px;
+    max-height: 990px;
+    margin: auto;
+    margin-top: -5%;
+    background-color: black;
+    position: relative;
+    z-index: 0;
 }
 
 
-@media screen and (prefers-color-scheme: dark) {
-    body {
-        background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
-    }
+
+.slider-box {
+    overflow: hidden;
+}
+
+.slider-box ul {
+    display: flex;
+    padding: 0%;
+    margin: 0%;
+    width: 400%;
+    animation: slide 10s infinite alternate ease-in-out;
+}
+
+.slider-box li {
+    width: 100vh;
+    list-style: none;
+    position: relative;
+}
+
+.slider-box img {
+        width: 100%;
+        height: 100vh;
+}
+
+@keyframes slide {
+    0%, 20% { margin-left: 0%; }
+    30%, 70% { margin-left: -150%; }
+    80%, 100% { margin-left: -280%; }
+}
+
+/* titulo absoluto encima del carrousel */
+.titulo-contenedor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    height: auto;
+    width: 70%;
+    margin: auto;
+}
+
+.titulo-item1, .titulo-item2, .titulo-item3 {
+    display: flex;
+    color: white;
+
+}
+
+.titulo-item1 {
+    white-space: pre-line;
+    text-transform: uppercase;
+    font-family: "Bebas",  sans-serif;
+    line-height: 2;
+    font-size: 24px;
+}
+
+.titulo-item2 {
+    margin-top: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-item3 {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    white-space: pre-line;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#D6D6D6;
+    font-family: "Myriad Pro";
+    font-weight: 100;
+    margin-top: 2%;
 }
