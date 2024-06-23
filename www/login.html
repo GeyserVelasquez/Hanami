@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/register.css">
+        <meta http-equiv="Content-Security-Policy" content="script-src https://*.000webhostapp.com http://localhost/">
         <title>Hanami | Ingresar</title>
     </head>
     <body>
@@ -19,22 +19,23 @@
                 </div>
             </header>
             <section>
-                <div class="register-contenedor">
+                <form class="register-contenedor" id="loginForm">
                     <div class="register-contenedor-item1">INGRESAR</div>
                     <div class="register-contenedor-item2">
-                        <div class="register-contenedor-item2-contenedor-item1">Correo electronico</div>
-                        <div class="register-contenedor-item2-contenedor-item2"><input class="input-mail" type="email"></div>
+                        <div class="register-contenedor-item2-contenedor-item1">Nombre de Usuario</div>
+                        <div class="register-contenedor-item2-contenedor-item2"><input class="input-mail" type="text"  name="UserName"></div>
                         <div class="register-contenedor-item2-contenedor-item3">Contraseña</div>
-                        <div class="register-contenedor-item2-contenedor-item4"><input class="input-password" type="text"></div>
-
+                        <div class="register-contenedor-item2-contenedor-item4"><input class="input-password" type="password" name="Password"></div>
                     </div>
-                    <button class="crear-cuenta-button">INGRESAR</button>
+                    <button type="submit" class="crear-cuenta-button">INGRESAR</button>
                     <label for="" class="label-link">¿No tienes una cuenta? <a href="register.html">CREAR CUENTA</a></label>
-                </div>
+                </form>
 
             </section>
         </div>
         <script src="cordova.js"></script>
+        <script src="./js/cdn/Jquery.js"></script>
         <script src="js/index.js"></script>
+        <script src="./js/registro/login.js"></script>
     </body>
 </html>

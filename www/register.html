@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/register.css">
-        <title>Hanami | Crear cuenta</title>
-    </head>
-    <body>
-        <div class="app">
-            <header>
-                <div class="header-div-contenedor">
-                    <div class="header-div-contenedor-item1"><label>Hanami</label></div>
-                    <div class="header-div-contenedor-item2"><img src="img/logo.png" class="logo"></div>
-                </div>
-            </header>
-            <section>
-                <div class="register-contenedor">
-                    <div class="register-contenedor-item1">CREAR CUENTA</div>
-                    <div class="register-contenedor-item2">
-                        <div class="register-contenedor-item2-contenedor-item1">Correo electronico</div>
-                        <div class="register-contenedor-item2-contenedor-item2"><input class="input-mail" type="email"></div>
-                        <div class="register-contenedor-item2-contenedor-item3">Contraseña</div>
-                        <div class="register-contenedor-item2-contenedor-item4"><input class="input-password" type="text"></div>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="./css/register.css">
+    <meta http-equiv="Content-Security-Policy" content="script-src https://*.000webhostapp.com http://localhost/">
+
+<body>
+    <div class="app">
+        <header>
+            <div class="header-div-contenedor">
+                <div class="header-div-contenedor-item1"><label>Hanami</label></div>
+                <div class="header-div-contenedor-item2"><img src="img/logo.png" class="logo"></div>
+            </div>
+        </header>
+        <section>
+            <form class="register-contenedor" id="registerForm">
+                <div class="register-contenedor-item1">CREAR CUENTA</div>
+                <div class="register-contenedor-item2">
+                    <div class="register-contenedor-item2-contenedor-item1">Correo electrónico</div>
+                    <div class="register-contenedor-item2-contenedor-item2"><input class="input-mail" type="email"
+                            name="Mail" required></div>
+                    <div class="register-contenedor-item2-contenedor-item1">Nombre</div>
+                    <div class="register-contenedor-item2-contenedor-item2"><input class="input-mail" type="text"
+                            name="FirstName" required></div>
+                    <div class="register-contenedor-item2-contenedor-item1">Apellido</div>
+                    <div class="register-contenedor-item2-contenedor-item2"><input class="input-mail" type="text"
+                            name="LastName" required></div>
+                    <div class="register-contenedor-item2-contenedor-item1">Nombre de Usuario</div>
+                    <div class="register-contenedor-item2-contenedor-item2"><input class="input-mail" type="text"
+                            name="UserName" required></div>
+                    <div class="register-contenedor-item2-contenedor-item1">Contraseña</div>
+                    <div class="register-contenedor-item2-contenedor-item2"><input class="input-password"
+                            type="password" name="Password" required></div>
+                    <div class="register-contenedor-item2-contenedor-item1">Verificar Contraseña</div>
+                    <div class="register-contenedor-item2-contenedor-item2"><input
+                            class="input-password input-password-confirm" type="password" required
+                            name="passwordConfirm"></div>
+                    <div class="register-contenedor-item2-contenedor-item1">Género</div>
+                    <div class="register-contenedor-item2-contenedor-item2">
+                        <select class="input-mail" name="Genero" required>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
                     </div>
-                    <button class="crear-cuenta-button">CREAR CUENTA</button>
-                    <label for="" class="label-link">¿Ya tienes una cuenta? <a href="login.html">INGRESA</a></label>
                 </div>
+                <button type="submit" class="crear-cuenta-button">CREAR CUENTA</button>
+                <label for="" class="label-link">¿Ya tienes una cuenta? <a href="login.html">INGRESA</a></label>
+            </form>
+        </section>
+    </div>
+    <!-- <script src="cordova.js"></script> -->
+    <script src="./js/cdn/Jquery.js"></script>
+    <script src="js/index.js"></script>
+    <script src="./js/registro/register.js"></script>
+</body>
 
-            </section>
-        </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
 </html>

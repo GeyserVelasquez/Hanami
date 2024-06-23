@@ -64,6 +64,7 @@ header {
     color: black;
 }
 
+header > div > :nth-child(An+B)
 .header-div-contenedor-item1, .header-div-contenedor-item2 {
     display: flex;
 }
