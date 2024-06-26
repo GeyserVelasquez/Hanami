@@ -1,5 +1,19 @@
 <?php
-header('Access-Control-Allow-Origin: *');
+session_start();
+
+// Lista de orígenes permitidos
+$allowedOrigins = ['http://localhost', 'https://hanamiapp.000webhostapp.com'];
+
+$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : ''; //Si no hay ningun origen, se asigna una cadena vacia
+
+if (in_array($origin, $allowedOrigins)) { //Busca los elementos de origin dentr de allowedOrigins
+    header('Access-Control-Allow-Origin: ' . $origin);
+    header('Access-Control-Allow-Credentials: true');
+} else if (strpos($origin, 'file://') === 0) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+    header('Access-Control-Allow-Credentials: true');
+}
+
 header('Content-Type: application/json');
 
 // Configuración de la conexión a la base de datos

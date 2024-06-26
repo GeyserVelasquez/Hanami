@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Hanami</title>
-    </head>
-    <body>
-        <div class="app">
-            <header>
-                <div class="header-div-contenedor">
-                    <div class="header-div-contenedor-item1"><label>Hanami</label></div>
-                    <div class="header-div-contenedor-item2"><img src="img/logo.png" class="logo"></div>
-                    <div class="header-div-contenedor-item3"><a href="login.html"><label>ingresar</label></a></div>
-                </div>
-            </header>
-            <section>
-                <div class="slider-box">
-                    <ul>
-                        <li>
-                            <img src="img/carrousel1.png">
-                        </li>
-                        <li>
-                            <img src="img/carrousel2.png">
-                        </li>
-                        <li>
-                            <img src="img/carrousel3.png">
-                        </li>
-                    </ul>
-                </div>
-                <div class="titulo-contenedor">
-                    <div class="titulo-item1"><label for="">
-                        Puntua, 
-                        resena, 
-                        y recomienda 
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="connect-src https://*.themoviedb.org http://localhost/ https://*.000webhostapp.com">   
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Hanami</title>
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <div class="header-div-contenedor">
+                <div class="header-div-contenedor-item1"><label>Hanami</label></div>
+                <div class="header-div-contenedor-item2"><img src="img/logo.png" class="logo"></div>
+                <div class="header-div-contenedor-item3"><a href="login.html"><label>ingresar</label></a></div>
+            </div>
+        </header>
+        <section>
+            <div class="slider-box">
+                <ul>
+                    <li>
+                        <img src="img/carrousel1.png">
+                    </li>
+                    <li>
+                        <img src="img/carrousel2.png">
+                    </li>
+                    <li>
+                        <img src="img/carrousel3.png">
+                    </li>
+                </ul>
+            </div>
+            <div class="titulo-contenedor">
+                <div class="titulo-item1"><label for="">
+                        Puntua,
+                        resena,
+                        y recomienda
                         tus peliculas favoritas.</label>
-                    </div>
-                    <div class="titulo-item2"><button>Comienza ahora</button></div>
-                    <div class="titulo-item3"> 
-                        La red social favorita de los amantes del cine. 
-                        Proximamente disponible en PC y iOS.
-                    </div>
                 </div>
-            </section>
-        </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+                <div class="titulo-item2"><button>Comienza ahora</button></div>
+                <div class="titulo-item3">
+                    La red social favorita de los amantes del cine.
+                    Proximamente disponible en PC y iOS.
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script src="./js/cdn/Jquery.js"></script>
+    <!-- <script src="./js/sesion/sesion_check.js"></script> -->
+     <script>
+        
+     </script>
+</body>
+
 </html>

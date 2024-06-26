@@ -8,7 +8,6 @@
 body {
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: none;
-    -webkit-user-select: none;
     background-color: #000000;
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
     font-size: 18px;
@@ -66,6 +65,7 @@ header {
 
 
 .slide {
+    z-index: 1;
     height: 100%;
     width: 180px;
     position: absolute;
@@ -96,7 +96,7 @@ ul li a {
 
 
 input {
-    z-index: 1;
+    z-index: 2;
     width: 40px;
     height: 40px;
     background-color: aliceblue;
@@ -185,20 +185,75 @@ input:checked ~ .slide {
     color: beige;
     background-color: #0f0f0f;
     height: 100%;
+
+}
+
+.carrousel-wrapper {
+    display: flex;
+    align-items: center;
+    z-index: 0;
+}
+
+.carrousel-container {
+    overflow-x: auto; /* Permitir desplazamiento horizontal */
+    white-space: nowrap;
+    flex-grow: 1; /* Permitir que el contenedor crezca para ocupar el espacio disponible */
+    padding: 16px;
+    scroll-behavior: smooth; /* Desplazamiento suave */
+    z-index: 0;
 }
 
 .carrousel-incrementable {
-    display: grid;
-    height: 200px;
-    width: 150px;
-    background-color: white;
-    margin-top: 10px;
+    display: inline-flex;
 }
 
-.carrousel-incrementable2 {
-    display: grid;
-    height: 200px;
-    width: 150px;
-    background-color: white;
-    margin-top: 10px;
+.carrousel-incrementable-item {
+    display: inline-block;
+    position: relative;
+    width: 150px; /* Tamaño pequeño */
+    margin-right: 16px;
+    z-index: 0;
+}
+
+.carrousel-incrementable-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carrousel-incrementable-item .title {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.carrousel-incrementable-item .rating {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px;
+    font-size: 12px;
+    text-align: center;
+}
+
+a {
+    color: #000000; 
+    text-decoration: none;
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+a:hover {
+    color: gray; 
 }

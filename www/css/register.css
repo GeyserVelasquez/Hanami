@@ -23,7 +23,16 @@ body {
     color: black;
 }
 
+a {
+    color: #e9ac2f; 
+    text-decoration: none;
+    font-weight: normal; 
+    font-style: normal; 
+}
 
+a:hover {
+    color: gray; 
+}
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
@@ -64,7 +73,6 @@ header {
     color: black;
 }
 
-header > div > :nth-child(An+B)
 .header-div-contenedor-item1, .header-div-contenedor-item2 {
     display: flex;
 }
@@ -182,4 +190,15 @@ section {
     font-size: 12px;
     text-align: center;
     color: #fff;
+}
+
+a {
+    color: #000000; 
+    text-decoration: none;
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+a:hover {
+    color: gray; 
 }

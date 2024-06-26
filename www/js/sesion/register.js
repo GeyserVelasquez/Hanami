@@ -18,7 +18,8 @@ $(document).ready(function () {
         // Enviar solicitud AJAX
         $.ajax({
             type: 'POST',
-            url: 'https://hanamiapp.000webhostapp.com/ServerScript/register.php',
+            // url: '/server/php/register.php',
+            url: 'https://hanamiapp.000webhostapp.com/Desarrollo/ServerScript/register.php',
             data: formData,
             dataType: 'json',
             success: function (response) {

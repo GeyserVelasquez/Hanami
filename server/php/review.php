@@ -27,29 +27,36 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Datos recibidos del formulario y sanitización
-    $userName = filter_var($_POST['UserName'], FILTER_SANITIZE_SPECIAL_CHARS);
-    $password = filter_var($_POST['Password'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $title = filter_var($_POST['title'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $text = filter_var($_POST['text'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $movieID = filter_var($_POST['movie'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $userID = filter_var($_POST['user'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
 
-    // Verificar las credenciales del usuario
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE UserName = ?");
-    $stmt->execute([$userName]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Iniciar la transacción
+    $pdo->beginTransaction();
 
-    if ($user && password_verify($password, $user['Password'])) {
-        // Iniciar sesión y guardar los datos del usuario en la sesión
-        $_SESSION['user_id'] = $user['ID_User'];
-        $_SESSION['user_name'] = $user['UserName'];
-        $_SESSION['user_role'] = $user['ID_Rol_FK'];
+    // Insertar los datos en la tabla users
+    $insertStmt = $pdo->prepare("
+        INSERT INTO reviews (Title, Text, Score, Date, ID_User_FK, ID_Movie_FK) 
+        VALUES ( :Title , :Text , :Score, :Date , :ID_User_FK, :ID_Movie_FK)
+    ");
+    
+    $insertStmt->execute();
 
-        echo json_encode(['status' => 'success', 'message' => 'Sesion Iniciada Correctamente.']);
-    } else {
-        echo json_encode(['status' => 'error', 'message' => 'Nombre de usuario o contraseña incorrectos.']);
-    }
+    // Confirmar la transacción
+    $pdo->commit();
+
+    echo json_encode(['status' => 'success', 'message' => 'Reseña Realizada']);
+
 } catch (Exception $e) {
+    // Revertir la transacción en caso de error
+    if ($pdo->inTransaction()) {
+        $pdo->rollBack();
+    }
     // Manejo de errores
     echo json_encode(['status' => 'error', 'message' => 'Error al procesar los datos: ' . $e->getMessage()]);
 } finally {
     // Cierre de la conexión
     $pdo = null;
 }
-?>

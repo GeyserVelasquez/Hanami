@@ -41,6 +41,17 @@ body {
     color: black;
 }
 
+a {
+    color: black; 
+    text-decoration: none; 
+    font-weight: normal; 
+    font-style: normal;
+}
+
+a:hover {
+    color: gray;
+}
+
 
 
 /* Landscape layout (with min-width) */
@@ -74,7 +85,7 @@ header {
 
 .header-div-contenedor {
     display: grid;
-    grid-template-columns: 1fr 30px 4fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "item1 item2 item3 ";
     height: 100px;
     margin: auto;
@@ -89,10 +100,10 @@ header {
 .header-div-contenedor-item1 {
     align-items: center;
     justify-content: flex-end;
-    padding-left: 5%;
     grid-template-areas: item1;
     /* detalles fuente */
     font-size: 30px;
+    margin-left: 5%;
 
 
 }
@@ -100,7 +111,8 @@ header {
 .header-div-contenedor-item2 {
     align-items: center; 
     justify-content: flex-start;
-    grid-template-areas: item2;
+    grid-template-areas: item1;
+    margin-left: 5%;
 }
 
 .header-div-contenedor-item3 {
@@ -111,6 +123,7 @@ header {
     /* detalles fuente */
     font-size: 10px;
     color: black;
+    margin-right: 10%;
 }
 
 .logo {

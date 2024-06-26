@@ -6,3 +6,5 @@ document.addEventListener('DOMContentLoaded', function() {
         checkbox.checked = !checkbox.checked;
     });
 });
+
+

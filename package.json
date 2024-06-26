@@ -1,7 +1,7 @@
 {
   "name": "io.cordova.hanami",
   "displayName": "Hanami",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Hanami App Prueba - Prog 4.",
   "main": "index.js",
   "scripts": {

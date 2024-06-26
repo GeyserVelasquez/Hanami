@@ -1,1 +1,1 @@
-Header set Content-Security-Policy "default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; connect-src 'self' https://hanamiapp.000webhostapp.com;"
+Header set Content-Security-Policy "default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval';img-src 'self' https://image.tmdb.org; connect-src 'self' https://hanamiapp.000webhostapp.com https://*.themoviedb.org;"

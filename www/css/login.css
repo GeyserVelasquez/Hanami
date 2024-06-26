@@ -22,9 +22,6 @@ body {
     width:100%;
     color: black;
 }
-
-
-
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
@@ -33,6 +30,17 @@ body {
         margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
     }
+}
+
+a {
+    color: #e9ac2f; 
+    text-decoration: none;
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+a:hover {
+    color: gray; 
 }
 
 button {
@@ -163,6 +171,7 @@ section {
     align-items: flex-start; 
     justify-content: flex-start; 
     height: 70px;
+    
 }  .input-password {
     background: none;
     border: none;
@@ -175,6 +184,7 @@ section {
 .crear-cuenta-button {
     margin: 0% 5% 0% 5%;
     width: 90%;
+    color: black;
 }
 
 .label-link {
@@ -182,3 +192,4 @@ section {
     text-align: center;
     color: #fff;
 }
+

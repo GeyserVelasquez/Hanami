@@ -2,12 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="css/main.css">     
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">  
+    <meta http-equiv="Content-Security-Policy" content="connect-src https://*.themoviedb.org http://localhost/ https://*.000webhostapp.com">   
     <title>Hanami | Main page</title>
 </head>
 <body>
@@ -20,11 +21,11 @@
         </div>
         <div class="slide">
             <ul>
-                <li><a href="./vistas_perfiles/profile_views.html" class="list-item1">Perfil</a></li>
+                <li><a href="./vistas_perfiles/profile_views.html" class="list-item1" id="UserName">Perfil</a></li>
                 <li><a href="#" class="list-item2">Tendencias</a></li>
                 <li><a href="./Nepos/nepos.html" class="list-item3">Ai Nepos</a></li>
                 <li><a href="#" class="list-item4">Ajustes</a></li>
-                <li><a href="./index.html" class="list-item4">Cerra Sesion</a></li>
+                <li><a class="list-item4" href="index.html">Cerrar Sesion</a></li>
             </ul>
         </div>
     </div>
@@ -42,23 +43,21 @@
             <div class="contenedor-nav-item3"><a href="">animes</a></div>
         </div>
     </section>
+
     <section class="muro">
         <label for="">Popular esta semana</label>
-
-        <div class="carrousel-incrementable">
-            <div class="carrousel-incrementable-item1"></div>
+        <div class="carrousel-wrapper">
+            <div class="carrousel-container">
+                <div class="carrousel-incrementable"></div>
+            </div>
         </div>
-
-        <label for="">Siguiendo</label>
-
-        <div class="carrousel-incrementable2">
-            <div class="carrousel-incrementable2-item1"> </div>
-        </div>
-
     </section>
 
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
+    <script src="./js/cdn/Jquery.js"></script>
+    <script src="./js/main/main.js"></script>
+    <!-- <script src="./js/sesion/sesion.js"></script> -->
+    <!-- <script src="./js/sesion/logout.js"></script> -->
 </body>
-<!-- Hola Chritopher -->
 </html>
