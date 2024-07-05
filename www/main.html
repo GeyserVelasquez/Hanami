@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">  
-    <meta http-equiv="Content-Security-Policy" content="connect-src https://*.themoviedb.org http://localhost/ https://*.000webhostapp.com">   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <meta http-equiv="Content-Security-Policy"
+        content="connect-src https://*.themoviedb.org http://localhost/ https://*.000webhostapp.com">
     <title>Hanami | Main page</title>
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="./library/sweetAlert/sweetalert2.min.css">
+    <link rel="stylesheet" href="./library/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./library/select2/select2.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/review.css">
 </head>
+
 <body>
     <div class="app">
         <input type="checkbox" id="menu-toggle" class="input-checkbox">
@@ -25,22 +32,59 @@
                 <li><a href="#" class="list-item2">Tendencias</a></li>
                 <li><a href="./Nepos/nepos.html" class="list-item3">Ai Nepos</a></li>
                 <li><a href="#" class="list-item4">Ajustes</a></li>
-                <li><a class="list-item4" href="index.html">Cerrar Sesion</a></li>
+                <li><a href="./review.html" class="list-item4">Resenias</a></li>
+                <li><button class="list-item4" id="logoutButton">Cerrar Sesion</button></li>
             </ul>
         </div>
     </div>
     <header>
         <div class="contenedor-header">
             <div class="contenedor-header-item1"></div>
-            <div class="contenedor-header-item2"> Popular</div>   
-            <div class="contenedor-header-item3"><img src="img/busqueda.png" class="busqueda-imagen"></div> 
+            <div class="contenedor-header-item2"> Popular</div>
+            <div class="contenedor-header-item3"><img src="img/busqueda.png" class="busqueda-imagen"></div>
         </div>
     </header>
+
+    <div class="modal fade" id="form-review" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva Reseña</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" id="review-form" name="review-form">
+                        <div class="mb-3">
+                            <label for="Movie" class="col-form-label">Pelicula</label>
+                            <select id="Movie" name="Movie" class="form-control" style="width: 80%;"></select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Title" class="col-form-label">Titulo</label>
+                            <input type="text" class="form-control" id="Title" name="Title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="Text" class="col-form-label">Descripcion</label>
+                            <textarea class="form-control" id="Text" name="Text"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Score" class="col-form-label">Puntaje</label>
+                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="Score" name="Score">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" id="review-submit" form="review-form">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section>
         <div class="contenedor-nav">
-            <div class="contenedor-nav-item1"><a href="">peliculas</a></div>
-            <div class="contenedor-nav-item2"><a href="">series</a></div>
-            <div class="contenedor-nav-item3"><a href="">animes</a></div>
+            <div class="contenedor-nav-item1"><a href="">Peliculas</a></div>
+            <div class="contenedor-nav-item2"><a href="">Series</a></div>
+            <div class="contenedor-nav-item3"><a href="">Animes</a></div>
         </div>
     </section>
 
@@ -53,11 +97,26 @@
         </div>
     </section>
 
+    <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center" id="btn-review"
+        data-bs-toggle="modal" data-bs-target="#form-review" data-bs-whatever="@mdo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+            class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+            <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+        </svg>
+    </button>
+
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
-    <script src="./js/cdn/Jquery.js"></script>
+    <script src="./library/Jquery/Jquery.js"></script>
+    <script src="./library/sweetAlert/sweetalert2.min.js"></script>
+    <script src="./library/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./library/select2/select2.js"></script>
     <script src="./js/main/main.js"></script>
-    <!-- <script src="./js/sesion/sesion.js"></script> -->
-    <!-- <script src="./js/sesion/logout.js"></script> -->
+
+    <script src="./js/review/search.js"></script>
+    <script src="./js/review/review.js"></script>
+    <script src="./js/sesion/logout.js"></script>
 </body>
+
 </html>

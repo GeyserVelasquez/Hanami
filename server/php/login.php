@@ -41,7 +41,7 @@ try {
         $_SESSION['user_name'] = $user['UserName'];
         $_SESSION['user_role'] = $user['ID_Rol_FK'];
 
-        echo json_encode(['status' => 'success', 'message' => 'Sesion Iniciada Correctamente.']);
+        echo json_encode(['status' => 'success', 'message' => 'Sesión Iniciada Correctamente.', 'user_id' => $user['ID_User']]);
     } else {
         echo json_encode(['status' => 'error', 'message' => 'Nombre de usuario o contraseña incorrectos.']);
     }
@@ -52,4 +52,3 @@ try {
     // Cierre de la conexión
     $pdo = null;
 }
-?>

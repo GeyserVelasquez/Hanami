@@ -1,0 +1,15 @@
+#btn-review{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 100%;
+    border: none;
+    background:none;
+    font-size: xx-large;
+    width: auto;
+    height: auto;
+}
+
+.select2-container{
+    z-index: 9999;
+}

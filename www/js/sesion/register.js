@@ -13,7 +13,7 @@ $(document).ready(function () {
         }
 
         // Preparar datos para el envío
-        var formData = $(this).serialize();
+        let formData = $(this).serialize();
 
         // Enviar solicitud AJAX
         $.ajax({

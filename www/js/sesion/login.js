@@ -1,3 +1,5 @@
+// or via CommonJS
+
 $(document).ready(function () {
     $('#loginForm').on('submit', function (e) {
 
@@ -5,6 +7,7 @@ $(document).ready(function () {
 
         // Preparar datos para el envío
         let formData = $(this).serialize();
+        alert(formData);
 
         // Enviar solicitud AJAX
         $.ajax({
@@ -14,9 +17,25 @@ $(document).ready(function () {
             data: formData,
             dataType: 'json',
             success: function (response) {
-                alert(response.message);
                 if (response.status === 'success') {
-                    window.location.href = "main.html";
+                    localStorage.setItem('ID_User', response.user_id);
+                    Swal.fire({
+                        title: response.user_id,
+                        timer: 2000,
+                        text: response.message,
+                        icon: "success"
+                      }).then( (response) => {
+                        alert(localStorage.getItem('ID_User'));
+                        window.location.href = "main.html";
+                      });
+                    // alert("Inicio de Sesion Exitoso");
+                } else {
+                    Swal.fire({
+                        title: "Error",
+                        timer: 2000,
+                        text: response.message,
+                        icon: "error"
+                      })
                 }
             },
             error: function (xhr, status, error) {

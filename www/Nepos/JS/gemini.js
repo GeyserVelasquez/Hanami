@@ -30,8 +30,9 @@ async function run() {
   }
 
 
-const API_KEY = "AIzaSyBOI0Y7S8O-AU3GMD1iwnKfQTK_5fabPkE";
+// const API_KEY = "AIzaSyBOI0Y7S8O-AU3GMD1iwnKfQTK_5fabPkE";
 // const API_KEY = "AIzaSyBxytF5KX3I5AvUV__KLML7zx9wu00hDoU";
+const API_KEY = "AIzaSyCJOhUe5BLoqPYB7BvMvOvVAvQWIKsNquM";
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 // const model = genAI.getGenerativeModel({ model: "gemini-pro" });

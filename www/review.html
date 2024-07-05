@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' http://localhost/ https://*.000webhostapp.com; connect-src 'self' https://*.themoviedb.org http://localhost/ https://*.000webhostapp.com; img-src 'self' https://image.tmdb.org; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <link rel="stylesheet" href="./library/select2/select2.css">
+    <link rel="stylesheet" href="./library/bootstrap/bootstrap.min.css">
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <form class="row g-3 needs-validation p-2" id="review-form" novalidate>
+        <div class="col-md-4">
+            <select id="Movie" name="ID_Movie_FK" style="width: 100%;"></select>
+        </div>
+        <div class="col-md-4">
+            <label for="Title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="Title" name="Title" required>
+            <div class="invalid-feedback">
+                Set Input!
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="Text" class="form-label">Review</label>
+            <textarea class="form-control" id="Text" name="Text" required></textarea>
+            <div class="invalid-feedback">
+                Set Input!
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="Score" class="form-label">Example range</label>
+            <input type="range" class="form-range" min="0" max="5" step="0.5" id="Score" name="Score">
+        </div>
+        <div class="col-12">
+            <button id="submit-review" class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </form>
+
+    <script src="./library/Jquery/Jquery.js"></script>
+    <script src="./library/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./library/select2/select2.js"></script>
+    <script src="./js/review/search.js"></script>
+    <script src="./js/review/review.js"></script>
+</body>
+
+</html>
