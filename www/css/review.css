@@ -13,3 +13,8 @@
 .select2-container{
     z-index: 9999;
 }
+
+#movieDetails{
+    width: 100vw;
+    border: none;
+}

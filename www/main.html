@@ -98,7 +98,9 @@
         </div>
     </section>
 
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+    <!-- INICIO Boton PROVISIONAL para Abrir Pantalla de Detalles Peliculas -->
+
+    <a class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#movieDetails"
         aria-controls="offcanvasRight" id="btn-movie">
 
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
@@ -107,30 +109,48 @@
                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
         </svg>
 
-    </button>
+    </a>
 
-    <div class="offcanvas offcanvas-end" style="width: 100%;" tabindex="-1" id="offcanvasRight"
-        aria-labelledby="offcanvasRightLabel">
+    <!-- FIN Boton PROVISIONAL para Abrir Pantalla de Detalles Peliculas -->
+
+
+    <!-- Inicio Pantalla Detalles Pelicula -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="movieDetails" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+            <h5 class="offcanvas-title" id="movieTitle">Titulo</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <button class="btn btn-primary" type="button" id="toggleBottomCanvas" aria-controls="offcanvasBottom">Toggle
-                bottom offcanvas</button>
 
-            <div class="offcanvas offcanvas-bottom" style="height: 50%;" tabindex="-1" id="offcanvasBottom"
-                aria-labelledby="offcanvasBottomLabel">
+            <img src="" alt="">
+
+            <!-- Boton para Abrir Pantalla de Acciones -->
+            <button class="btn btn-primary" type="button" id="btn-review" aria-controls="offcanvasBottom">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </button>
+            <!-- Boton para Abrir Pantalla de Acciones -->
+
+
+            <!-- Inicio de Pantalla de Acciones para la pelicula -->
+            <div class="offcanvas offcanvas-bottom" style="height: 65%;" tabindex="-1" id="review" aria-labelledby="offcanvasBottomLabel" >
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Acciones</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="review" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body small">
                     lorem*1000
                 </div>
             </div>
+            <!-- Fin de Pantalla de Acciones para la pelicula -->
+
         </div>
     </div>
+    <!-- Fin Pantalla Detalles Pelicula -->
+
 
 
     <!-- <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center" id="btn-review"
