@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <meta http-equiv="Content-Security-Policy"
-        content="connect-src https://*.themoviedb.org http://localhost/ https://*.000webhostapp.com">
+        content="connect-src https://*.themoviedb.org http://localhost/ https://*.000webhostapp.com http://www.w3.org/2000/svg">
     <title>Hanami | Main page</title>
-    <meta name="color-scheme" content="light dark">
+    <!-- <meta name="color-scheme" content="light dark"> -->
     <link rel="stylesheet" href="./library/sweetAlert/sweetalert2.min.css">
     <link rel="stylesheet" href="./library/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./library/select2/select2.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/review.css">
 </head>
 
@@ -115,17 +115,121 @@
 
 
     <!-- Inicio Pantalla Detalles Pelicula -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="movieDetails" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="movieDetails" aria-labelledby="offcanvasRightLabel"
+        data-bs-theme="dark">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="movieTitle">Titulo</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
 
-            <img src="" alt="">
+            <div class="fluid-container d-flex flex-row w-100 justify-content-between">
+                <div>
+                    <h2 class="h3">Intensamente 2</h2> <!-- Titulo -->
+                    <div class="d-flex flex-column my-3">
+                        <small class="fw-light fs-6">Director</small>
+                        <small class="fw-normal"> Jorge El Curioso</small> <!-- Director -->
+                    </div>
+
+                    <div> <!-- Año - Duracion - Trailer -->
+                        <small class="fw-light fs-6">2024</small>
+                        <small class="fw-light fs-6 mx-1">•</small>
+                        <small class="fw-light fs-6">94 min</small>
+                        <small class="fw-normal fs-6 mx-4">Trailer</small>
+                    </div>
+
+                </div>
+
+                <img id="poster" class="img-fluid" src="./img/assets/poster.jpg" alt="Poster.png"> <!-- Imagen Poster -->
+            </div>
+
+            <p class="lead w-65 text-center my-4">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis odio provident,
+                expedita sequi nihil corrupti doloremque ipsum magnam est perspiciatis commodi, ullam
+                repellendus eius ex reiciendis optio laborum quod ratione.
+            </p>
+
+            <hr>
+            <!-- Inicio Espacio Publicitario -->
+            <div class="w-100 text-center d-flex flex-column align-items-center">
+                <img class="rounded" src="./img/assets/publicidad.png" alt="Pulicidad" width="75%">
+                <small class="fw-light fs-7 mt-2">Eliminar Publicidad</small>
+            </div>
+            <!-- Fin Espacio Publicitario -->
+            <hr>
+
+            <!-- Inicio Valoracion en Estrellas -->
+            <div class="d-flex flex-column align-items-center w-100">
+                <small class="w-100 fw-normal mt-2 text-start"> Rating </small> <!-- Procurar Mantener Cerrado El Contenedor de Abajo -->
+                <div class="group-stars my-4 d-flex flex-row w-75 justify-content-around">
+
+                    <div class="star">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-star-fill"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                    </div>
+                    <div class="star">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-star-fill"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                    </div>
+                    <div class="star">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-star-fill"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                    </div>
+                    <div class="star">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-star-fill"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                    </div>
+                    <div class="star">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-star-fill"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="">3.5</h3>
+            </div>
+            <!-- Fin Valoracion en Estrellas -->
+
+            <hr>
+
+            <!-- Inicio Visto Por Usuarios -->
+            <div class="watch-user-container">
+                <small class="fw-normal mt-2 text-start"> Visto Por </small> 
+                <div class="my-4 d-flex flex-row justify-content-center">
+                    <div class="watch-user mx-2">
+
+                    </div>
+                    <div class="watch-user mx-2">
+
+                    </div>
+                    <div class="watch-user mx-2">
+
+                    </div>
+                    <div class="watch-user  mx-2">
+
+                    </div>
+                    <div class="watch-user  mx-2">
+
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Visto Por Usuarios -->
 
             <!-- Boton para Abrir Pantalla de Acciones -->
-            <button class="btn btn-primary" type="button" id="btn-review" aria-controls="offcanvasBottom">
+            <button class="btn btn-primary" type="button" id="btn-action" aria-controls="offcanvasBottom">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                     class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                     <path
@@ -136,10 +240,11 @@
 
 
             <!-- Inicio de Pantalla de Acciones para la pelicula -->
-            <div class="offcanvas offcanvas-bottom" style="height: 65%;" tabindex="-1" id="review" aria-labelledby="offcanvasBottomLabel" >
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="actionDetails"
+                aria-labelledby="offcanvasBottomLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasBottomLabel">Acciones</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="review" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body small">
                     lorem*1000

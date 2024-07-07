@@ -7,7 +7,7 @@
     <title>Review</title>
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self' http://localhost/ https://*.000webhostapp.com; connect-src 'self' https://*.themoviedb.org http://localhost/ https://*.000webhostapp.com; img-src 'self' https://image.tmdb.org; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
-    <link rel="stylesheet" href="./library/select2/select2.css">
+    <!-- <link rel="stylesheet" href="./library/select2/select2.css"> -->
     <link rel="stylesheet" href="./library/bootstrap/bootstrap.min.css">
     <style>
     </style>
@@ -41,6 +41,20 @@
             <button id="submit-review" class="btn btn-primary" type="submit">Submit form</button>
         </div>
     </form>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+        aria-controls="offcanvasScrolling">Enable body scrolling</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Try scrolling the rest of the page to see this option in action.</p>
+        </div>
+    </div>
 
     <script src="./library/Jquery/Jquery.js"></script>
     <script src="./library/bootstrap/bootstrap.bundle.min.js"></script>
