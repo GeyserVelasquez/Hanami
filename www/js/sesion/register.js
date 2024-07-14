@@ -13,13 +13,13 @@ $(document).ready(function () {
         }
 
         // Preparar datos para el envío
-        let formData = $(this).serialize();
+        var formData = $(this).serialize();
 
         // Enviar solicitud AJAX
         $.ajax({
             type: 'POST',
             // url: '/server/php/register.php',
-            url: 'https://hanamiapp.000webhostapp.com/Desarrollo/ServerScript/register.php',
+            url: 'https://hanamineposapp.000webhostapp.com/Desarrollo/ServerScript/register.php',
             data: formData,
             dataType: 'json',
             success: function (response) {

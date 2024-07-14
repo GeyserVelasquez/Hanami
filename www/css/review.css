@@ -1,4 +1,4 @@
-#btn-movie, #btn-action{
+#btn-movie, #btn-action, #btn-review{
     position: fixed;
     right: 15px;
     bottom: 15px;
@@ -10,11 +10,17 @@
     height: auto;
 }
 
+/* #btn-review{
+    right:auto;
+    left: 0px;
+    color: blue;
+} */
+
 .select2-container{
     z-index: 9999;
 }
 
-#movieDetails{
+#movieDetails, #movieReview{
     width: 100vw;
     border: none;
     text-transform: none;
@@ -28,7 +34,7 @@
     height: 50vh;
 }
 
-#poster{
+#movieDetails #poster{
     width: 7rem;
     height: fit-content;
 }
@@ -38,10 +44,69 @@
     color:rgb(230, 220, 16);
 }
 
-.watch-user{
-    width: 50px;
-    height: 50px;
+.watch-user, .actor{
+    width: 48px;
+    height: 48px;
     border-radius: 100px;
     background-color: aliceblue;
 }
 
+.movie-data > :nth-child(n){
+    width: 95px;
+    height: 70px;
+    background-color: azure;
+}
+
+.details > nav > .nav-tabs > .nav-link {
+    width: 95px;
+}
+
+.details ul{
+    padding-left: 1rem;
+}
+
+.preview-user .star{
+    width: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#movieReview #posterMini{
+    width: 2rem;
+    height: fit-content;
+}
+
+#movieReview hr{
+    width: 100vw;
+}
+
+#movieReview textarea{
+    min-height: 225px;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 2rem;
+    justify-content: center;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    color: #ccc;
+}
+
+.star-rating input:checked~label,
+.star-rating input:hover~label,
+.star-rating label:hover~label {
+    color: #f5c518;
+}
+
+#movieReview #submit-review{
+    width: 50px;
+    height: 50px;
+}

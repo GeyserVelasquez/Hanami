@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepos</title>
+    <link rel="stylesheet" href="./CSS/Styles.css">
+    <link rel="shortcut icon" href="./Img/Logo.svg" type="image/x-icon">
+
+</head>
+<body>
+    <section id="Nepos">
+        <section id="headerNepos">
+            <div id="logo">
+                <a href="../main.html">
+                    <img src="./Img/Back.svg" alt="Back">
+                </a>
+                <h1>Nepos</h1>
+            </div>
+            <div id="search">
+                <input type="text" placeholder="Buscar..." id="searchInput">
+            </div>
+            <div id="menuButtonHaver">
+                <button id="menu">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </button>
+            </div>
+        </section>
+        <section id="sideMenu">
+            <div id="options">
+                <button id="newChat" class="option">Nuevo Chat</button>
+                <button id="find" class="option">Buscar</button>
+                <!-- <button class="option">Vaciar chat</button> -->
+                <button id="pdfExport" class="option">Exportar a PDF</button>
+            </divoption>
+        </section>
+        <section id="chatBody">
+            <section id="messages">
+                <!-- <div class="userBubble">
+                    <span>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    </span>
+                </div>
+                <div class="neposBubble">
+                    <span>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    </span>
+                </div> -->
+            </section>
+        </section>
+
+        <section id="userInput">
+            <div id="inputHaver"><textarea id="userPrompt" placeholder="Mensaje..."></textarea></div>
+            <div><button><img src="./Img/send.svg" alt="send" id="sendButton"></button></div>
+            
+        </section>
+    </section>
+
+    <script type="importmap">
+        {
+        "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+        }
+    </script>
+
+    
+
+    <!-- <script>
+        const userPrompt = document.getElementById('userPrompt');
+        const messages =document.getElementById('messages');
+        for (let index = 0; index < 15; index++) {
+            const userResponse = document.createElement('span')
+                userResponse.classList.add('userBubble');
+                userResponse.textContent='Question';
+                messages.appendChild(userResponse);
+
+            const neposResponse = document.createElement('span')
+                neposResponse.classList.add('neposBubble');
+                neposResponse.textContent='Answer';
+                messages.appendChild(neposResponse);
+                
+        }
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    </script> -->
+
+
+    <script src="./JS/pdfmake.js"></script>
+    <script src="./JS/vfs_fonts.js"></script>
+    <script src="./JS/gemini.js" type="module"></script>
+    <script src="./JS/inputBar.js"></script>
+    <script src="./JS/menu.js"></script>
+</body>
+</html>

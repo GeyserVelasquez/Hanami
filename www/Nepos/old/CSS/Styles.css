@@ -1,0 +1,290 @@
+*{
+    font-family: sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0%;
+    background-image: radial-gradient(#111111, #090909, #050505);
+    background-size: 800% 800%;
+    animation: backgroundAnimation 10s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+    0%{
+        background-position: 0% 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+
+#Nepos{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+#headerNepos{
+    z-index: 2;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    height: 76px;
+    display: flex;
+    color: #111111;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E9AC2F;
+}
+
+#logo{
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#logo img{
+    width: 35%;
+}#logo h1{
+    font-size: 25px;
+}
+#menuButtonHaver{
+    display: flex;
+    width: 10%;
+    align-items: center;
+    align-content: center;
+}
+
+
+#chatBody{
+    
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+}
+#messages{
+    z-index: 1;
+    height: fit-content;
+    position: absolute;
+    top:75px;
+    bottom: 0px;
+    right: 10px;
+    left: 10px;
+    display: grid;
+    padding-bottom: 75px;
+}
+
+
+
+#userInput{
+    z-index: 2;
+    position: fixed;
+    bottom: 1%;
+    left: 2%;
+    right: 2%;
+    height: auto;
+    background-color: transparent;
+    display: flex;
+    color: #111111;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#inputHaver{
+    width: 85%;
+    height: auto;
+    background-color: #E9AC2F;
+    display: flex;
+    border-radius: 50px;
+    color: #111111;
+    justify-content: center;
+}
+
+#userPrompt{
+    width: 85%;
+    min-height: 50px;
+    border: none;
+    background-color: transparent;
+    color: #111111;
+    font-size: 20px;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    align-content: center;
+    resize: none;
+    outline: none;
+}
+#userPrompt::placeholder{
+    color: #373737;
+}
+
+
+#userInput button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    aspect-ratio: 1/1;
+    background-color: #E9AC2F;
+    border-style: none;
+    color: #111111;
+    border-radius: 50%;
+}
+#userInput button img{
+    width: 75%;
+}
+
+
+
+/*------------------- Bubbles -------------------*/
+
+.userBubble{
+    width: 75%;
+    height: fit-content;
+    color: #111111;
+    background-color: #fac04a;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    overflow-wrap: break-word;
+    padding: 3%;
+    justify-self: right;
+    margin-top: 10px;
+    
+}
+.neposBubble{
+    width: 75%;
+    height: fit-content;
+    color: #111111;
+    background-color: #E9AC2F;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    overflow-wrap: break-word;
+    padding: 3%;
+    justify-self: left;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------- Hamburger -------------------*/
+#menu{
+    width: 100%;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    display: grid;
+    align-content: center;
+}
+#bar1, #bar2, #bar3{
+    background-color: #111111;
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    margin: 12% 0%;
+    padding: 0%;
+}
+
+.animated-button1{
+    animation: ani1 0.3s ease-in-out forwards;
+}
+.animated-button2{
+    animation: ani2 0.3s ease-in-out forwards;
+}
+.animated-button3{
+    animation: ani3 0.3s ease-in-out forwards;
+}
+
+@keyframes ani1 {
+    0%{}
+    100%{
+        transform: rotate(45deg);
+        margin: 0%;
+        margin-bottom: -4.85%;
+    }
+}
+@keyframes ani2 {
+    0%{}
+    100%{
+        width: 0%;
+        height: 0%;
+        display: none;
+        margin: 0%;
+    }
+}
+@keyframes ani3 {
+    0%{}
+    100%{
+        transform: rotate(-45deg);
+        margin: 0%;
+        margin-top: -4.85%;
+    }
+}
+
+.unanimated-button1{
+    animation: unAni1 0.3s ease-in-out forwards;
+}
+.unanimated-button2{
+    animation: unAni2 0.3s ease-in-out forwards;
+}
+.unanimated-button3{
+    animation: unAni3 0.3s ease-in-out forwards;
+}
+
+
+@keyframes unAni1 {
+    0%{transform: rotate(45deg);
+        margin: 0%;
+        margin-bottom: -4.85%;}
+    100%{
+        transform: rotate(0deg);
+        width: 100%;
+        height: 3px;
+        margin: 12% 0%;
+    }
+}
+@keyframes unAni2 {
+    0%{width: 0%;
+        height: 0%;
+        display: none;
+        margin: 0%;}
+    100%{
+        display: block;
+        width: 100%;
+        height: 3px;
+        margin: 12% 0%;
+        margin-bottom: 20%;
+    }
+}
+@keyframes unAni3 {
+    0%{transform: rotate(-45deg);
+        margin: 0%;
+        margin-top: -4.85%;}
+    100%{
+        transform: rotate(0deg);
+        width: 100%;
+        height: 3px;
+        margin: 12% 0%;
+    }
+}
+

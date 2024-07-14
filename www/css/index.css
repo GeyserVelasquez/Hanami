@@ -19,7 +19,7 @@
  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
     box-sizing: border-box;
 }
 
@@ -65,22 +65,27 @@ a:hover {
 }
 
 button {
-    background-color: #E9AC2F;
-    color: black;
-    border-radius: 5%;
-    height: 30px;
-    width: 140px;
-    
+    --start-color: #C03540;
+    --end-color: #FFA3AA;
+    position: relative;
+    appearance: none;
+    padding: 1em 2em;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border-radius: 100px;
+    border: 2px solid transparent;
+    background: linear-gradient(#000, #000) padding-box, linear-gradient(45deg, var(--start-color), var(--end-color)) border-box;
+    transition: background-position 0.3s;
 }
 
 header {
-    background-color: #E9AC2F;
+    background-color: #000000;
     height: 100px;
     font-family: 'Base Neue Trial';
-    border-bottom-right-radius:  20px;
-    border-bottom-left-radius: 20px;
     position: relative;
     z-index: 1;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .header-div-contenedor {
@@ -95,6 +100,7 @@ header {
 
 .header-div-contenedor-item1, .header-div-contenedor-item2, .header-div-contenedor-item3 {
     display: flex;
+    color: white;
 }
 
 .header-div-contenedor-item1 {
@@ -104,6 +110,7 @@ header {
     /* detalles fuente */
     font-size: 30px;
     margin-left: 5%;
+    color: white;
 
 
 }
@@ -122,8 +129,10 @@ header {
     padding-left: 5% ;
     /* detalles fuente */
     font-size: 10px;
-    color: black;
+    color: rgb(255, 255, 255);
     margin-right: 10%;
+} .ingresar-text {
+    color: white;
 }
 
 .logo {
@@ -138,12 +147,17 @@ section {
     background-color: black;
     position: relative;
     z-index: 0;
+    overflow: hidden;
 }
-
 
 
 .slider-box {
     overflow: hidden;
+    object-fit: cover;
+    width: 100%;
+    border-left : 2px solid rgba(255, 255, 255, 0.2);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    
 }
 
 .slider-box ul {
@@ -155,14 +169,15 @@ section {
 }
 
 .slider-box li {
-    width: 100vh;
+    width: 100%;
     list-style: none;
     position: relative;
 }
 
 .slider-box img {
+        position: relative;
         width: 100%;
-        height: 100vh;
+        height: 100%;
 }
 
 @keyframes slide {
@@ -216,4 +231,185 @@ section {
     font-family: "Myriad Pro";
     font-weight: 100;
     margin-top: 2%;
+}
+
+.slider-patrocinios {
+    max-width: 100%;
+    margin: 0%;
+    height: 140px;
+    width: auto;
+    background-color: #000000;
+    position: relative;
+    /* bordes */
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);;
+    z-index: 2;
+    overflow: hidden; /* esto para que no se vuelva un 8 el scroll infinito */
+    
+}
+
+/* infinite scroll */
+
+.wrapper {
+    width: 100%;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 140px;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0)
+    );
+}
+
+.infinite-scroll {
+    display: flex;
+    position: relative;
+    width: calc(200px * 8 + 160px); /* Asegura que el track sea suficientemente ancho */
+    animation: scrollLeft 10s linear infinite; 
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-56%);
+    }
+}
+
+.item {
+    width: 400px;
+    height: 100px;
+    margin-top: 15px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 6px;
+    margin-right: 40px; /* Ajuste para el espacio entre imágenes */
+}
+
+.item img {
+    width: 100px;
+    height: 50px;
+}
+
+
+
+/* seccion cartas */
+
+.section-cards {
+    background-color: transparent;
+    height: 500px;
+}
+
+/* fondo gradiente */
+
+:root {
+    --color-bg1: rgb(81, 41, 41); 
+    --color-bg2: rgb(140, 75, 75); 
+    --color1: 192, 53, 64; 
+    --color2: 255, 163, 170; 
+    --color3: 255, 163, 170;
+    --color4: 192, 53, 64; 
+    --color5: 255, 163, 170;
+    --circle-size: 250%;
+    --blending: hard-light;
+}
+
+.gradient-bg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.svgBlur {
+    display: none;
+}
+
+.noiseBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    mix-blend-mode: soft-light;
+    opacity: 0.3;
+}
+
+.gradients-container {
+    filter: url(#goo) blur(40px);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.g1, .g2, .g3, .g4, .g5 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: center center;
+    opacity: 1;
+    animation: moveRandom 60s linear infinite; /* Ajustar duración */
+}
+
+.g1 {
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    animation-duration: 45s; /* Ajustar duración */
+}
+
+.g2 {
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    animation-duration: 50s; /* Ajustar duración */
+}
+
+.g3 {
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+    animation-duration: 55s; /* Ajustar duración */
+}
+
+.g4 {
+    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+    animation-duration: 60s; /* Ajustar duración */
+}
+
+.g5 {
+    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+    animation-duration: 65s; /* Ajustar duración */
+}
+
+@keyframes moveRandom {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    20% {
+        transform: translate(80vw, -80vh) rotate(120deg);
+    }
+    40% {
+        transform: translate(-80vw, 80vh) rotate(240deg);
+    }
+    60% {
+        transform: translate(80vw, 80vh) rotate(360deg);
+    }
+    80% {
+        transform: translate(-80vw, -80vh) rotate(480deg);
+    }
+    100% {
+        transform: translate(80vw, -80vh) rotate(600deg);
+    }
 }

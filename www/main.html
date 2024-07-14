@@ -1,100 +1,96 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
-    <meta http-equiv="Content-Security-Policy"
-        content="connect-src https://*.themoviedb.org http://localhost/ https://*.000webhostapp.com http://www.w3.org/2000/svg">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">  
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' http://localhost:3010 https://*.000webhostapp.com; connect-src 'self' https://*.themoviedb.org http://localhost:3010 https://*.000webhostapp.com https://www.w3.org/2000/svg; img-src 'self' https://image.tmdb.org; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
     <title>Hanami | Main page</title>
-    <!-- <meta name="color-scheme" content="light dark"> -->
+
+
     <link rel="stylesheet" href="./library/sweetAlert/sweetalert2.min.css">
     <link rel="stylesheet" href="./library/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./library/select2/select2.css">
+    <link rel="stylesheet" href="./library/myFontAwesome/myFontAwesome.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/review.css">
-</head>
 
+</head>
 <body>
     <div class="app">
         <input type="checkbox" id="menu-toggle" class="input-checkbox">
-        <div class="toggle">
-            <span class="top_line common"></span>
-            <span class="middle_line common"></span>
-            <span class="bottom_line common"></span>
-        </div>
         <div class="slide">
             <ul>
                 <li><a href="./vistas_perfiles/profile_views.html" class="list-item1" id="UserName">Perfil</a></li>
                 <li><a href="#" class="list-item2">Tendencias</a></li>
                 <li><a href="./Nepos/nepos.html" class="list-item3">Ai Nepos</a></li>
                 <li><a href="#" class="list-item4">Ajustes</a></li>
-                <li><a href="./review.html" class="list-item4">Resenias</a></li>
-                <li><button class="list-item4" id="logoutButton">Cerrar Sesion</button></li>
+                <li><a class="list-item4">Cerrar Sesion</a></li>
             </ul>
         </div>
     </div>
+    
     <header>
+        <div class="toggle">
+            <span class="top_line common"></span>
+            <span class="middle_line common"></span>
+            <span class="bottom_line common"></span>
+        </div>
         <div class="contenedor-header">
             <div class="contenedor-header-item1"></div>
-            <div class="contenedor-header-item2"> Popular</div>
-            <div class="contenedor-header-item3"><img src="img/busqueda.png" class="busqueda-imagen"></div>
+            <div class="contenedor-header-item2">Muro</div>   
+            <div class="contenedor-header-item3"><img src="img/busqueda.png" class="busqueda-imagen"></div> 
         </div>
     </header>
 
-    <div class="modal fade" id="form-review" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva Reseña</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="needs-validation" id="review-form" name="review-form">
-                        <div class="mb-3">
-                            <label for="Movie" class="col-form-label">Pelicula</label>
-                            <select id="Movie" name="Movie" class="form-control" style="width: 80%;"></select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="Title" class="col-form-label">Titulo</label>
-                            <input type="text" class="form-control" id="Title" name="Title">
-                        </div>
-                        <div class="mb-3">
-                            <label for="Text" class="col-form-label">Descripcion</label>
-                            <textarea class="form-control" id="Text" name="Text"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="Score" class="col-form-label">Puntaje</label>
-                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="Score" name="Score">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary" id="review-submit"
-                        form="review-form">Publicar</button>
-                </div>
+    <div class="gradient-bg">
+            <!-- <svg viewBox="0 0 100vw 100vw" xmlns='http://www.w3.org/2000/svg' class="noiseBg">
+                <filter id='noiseFilterBg'>
+                    <feTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch' />
+                </filter>
+                <rect width='100%' height='100%' preserveAspectRatio="xMidYMid meet" filter='url(#noiseFilterBg)' />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="svgBlur">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                </defs>
+            </svg>
+            <div class="gradients-container">
+                <div class="g1"></div>
+                <div class="g2"></div>
+                <div class="g3"></div>
+                <div class="g4"></div>
+                <div class="g5"></div>
             </div>
-        </div>
-    </div>
+        </div>  -->
+
 
     <section>
         <div class="contenedor-nav">
-            <div class="contenedor-nav-item1"><a href="">Peliculas</a></div>
-            <div class="contenedor-nav-item2"><a href="">Series</a></div>
-            <div class="contenedor-nav-item3"><a href="">Animes</a></div>
+            <div class="contenedor-nav-item1"><a href="">peliculas</a></div>
+            <div class="contenedor-nav-item2"><a href="">series</a></div>
+            <div class="contenedor-nav-item3"><a href="">animes</a></div>
         </div>
     </section>
 
     <section class="muro">
-        <label for="">Popular esta semana</label>
+        <label for="">Popular en Hanami</label>
         <div class="carrousel-wrapper">
-            <div class="carrousel-container">
-                <div class="carrousel-incrementable"></div>
-            </div>
+                <div class="carrousel-container carrousel-incrementable"></div>
+        </div>
+    </section>
+    
+    <section class="recommendations">
+        <label for="">Recomendaciones</label>
+        <div class="recommendations-wrapper">
+            <div class="recommendations-container"></div>
         </div>
     </section>
 
@@ -118,32 +114,32 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="movieDetails" aria-labelledby="offcanvasRightLabel"
         data-bs-theme="dark">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="movieTitle">Titulo</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title" id="movieTitle">Pelicula</h5>
+            <button type="button" class="btn btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
 
             <div class="fluid-container d-flex flex-row w-100 justify-content-between">
                 <div>
-                    <h2 class="h3">Intensamente 2</h2> <!-- Titulo -->
-                    <div class="d-flex flex-column my-3">
+                    <h2 class="h3" id="movie-title">Intensamente 2</h2> <!-- Titulo -->
+                    <div id="movie-director" class="d-flex flex-column my-3">
                         <small class="fw-light fs-6">Director</small>
                         <small class="fw-normal"> Jorge El Curioso</small> <!-- Director -->
                     </div>
 
                     <div> <!-- Año - Duracion - Trailer -->
-                        <small class="fw-light fs-6">2024</small>
+                        <small id="movie-year" class="fw-light fs-6">2023</small>
                         <small class="fw-light fs-6 mx-1">•</small>
-                        <small class="fw-light fs-6">94 min</small>
-                        <small class="fw-normal fs-6 mx-4">Trailer</small>
+                        <small id="movie-duration" class="fw-light fs-6">94 min</small>
                     </div>
 
                 </div>
 
-                <img id="poster" class="img-fluid" src="./img/assets/poster.jpg" alt="Poster.png"> <!-- Imagen Poster -->
+                <img id="poster" class="img-fluid" src="./img/assets/poster.jpg" alt="Poster.png">
+                <!-- Imagen Poster -->
             </div>
 
-            <p class="lead w-65 text-center my-4">
+            <p class="lead text-center my-4" id="movie-sinapsis">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis odio provident,
                 expedita sequi nihil corrupti doloremque ipsum magnam est perspiciatis commodi, ullam
                 repellendus eius ex reiciendis optio laborum quod ratione.
@@ -152,7 +148,7 @@
             <hr>
             <!-- Inicio Espacio Publicitario -->
             <div class="w-100 text-center d-flex flex-column align-items-center">
-                <img class="rounded" src="./img/assets/publicidad.png" alt="Pulicidad" width="75%">
+                <img class="asg" src="./img/assets/asg.png" alt="ASG">
                 <small class="fw-light fs-7 mt-2">Eliminar Publicidad</small>
             </div>
             <!-- Fin Espacio Publicitario -->
@@ -160,7 +156,8 @@
 
             <!-- Inicio Valoracion en Estrellas -->
             <div class="d-flex flex-column align-items-center w-100">
-                <small class="w-100 fw-normal mt-2 text-start"> Rating </small> <!-- Procurar Mantener Cerrado El Contenedor de Abajo -->
+                <small class="w-100 fw-normal mt-2 text-start"> Rating </small>
+                <!-- Procurar Mantener Cerrado El Contenedor de Abajo -->
                 <div class="group-stars my-4 d-flex flex-row w-75 justify-content-around">
 
                     <div class="star">
@@ -207,12 +204,13 @@
 
             <!-- Inicio Visto Por Usuarios -->
             <div class="watch-user-container">
-                <small class="fw-normal mt-2 text-start"> Visto Por </small> 
+                <small class="fw-normal mt-2 text-start"> Visto Por </small>
                 <div class="my-4 d-flex flex-row justify-content-center">
                     <div class="watch-user mx-2">
 
                     </div>
                     <div class="watch-user mx-2">
+                        <small></small>
 
                     </div>
                     <div class="watch-user mx-2">
@@ -228,28 +226,476 @@
             </div>
             <!-- Fin Visto Por Usuarios -->
 
-            <!-- Boton para Abrir Pantalla de Acciones -->
-            <button class="btn btn-primary" type="button" id="btn-action" aria-controls="offcanvasBottom">
+
+
+            <hr>
+
+            <div class="movie-data w-100 d-flex flex-row justify-content-between">
+                <div class="watchers mx-2 rounded"></div>
+                <div class="reviews mx-2 rounded"></div>
+                <div class="lists mx-2 rounded"></div>
+            </div>
+
+            <hr>
+
+            <div class="details ">
+                <nav class="my-4">
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                        <button class="nav-link active fw-light fs-6 d-flex align-items-center" id="nav-home-tab"
+                            data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab"
+                            aria-controls="nav-home" aria-selected="true">Staff</button>
+
+                        <button class="nav-link fw-light fs-6 d-flex align-items-center" id="nav-profile-tab"
+                            data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab"
+                            aria-controls="nav-profile" aria-selected="false">Detalles</button>
+
+                        <button class="nav-link fw-light fs-6 d-flex align-items-center" id="nav-contact-tab"
+                            data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab"
+                            aria-controls="nav-contact" aria-selected="false">Géneros</button>
+
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                        tabindex="0">
+                        <div class="watch-user-container mx-2">
+                            <h6 class="fw-light mt-1 text-start"> Cast </h6>
+                            <div class="my-3 d-flex flex-row justify-content-center">
+
+                                <div class="actor mx-2">
+
+                                </div>
+                                <div class="actor mx-2">
+                                    <small></small>
+
+                                </div>
+                                <div class="actor mx-2">
+
+                                </div>
+                                <div class="actor  mx-2">
+
+                                </div>
+                                <div class="actor  mx-2">
+
+                                </div>
+                            </div>
+                            <hr>
+                            <small class="fw-light mt-1 text-start"> Crew </small>
+                            <div class="my-3 d-flex flex-row justify-content-center">
+
+                                <div class="actor mx-2">
+
+                                </div>
+                                <div class="actor mx-2">
+                                    <small></small>
+
+                                </div>
+                                <div class="actor mx-2">
+
+                                </div>
+                                <div class="actor  mx-2">
+
+                                </div>
+                                <div class="actor  mx-2">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                        tabindex="0">
+                        <div class="movie-studios-container">
+                            <h6 class="fw-normal text-start">Estudios</h6>
+                            <ul id="movie-studios" class="">
+                                <li class="fw-light fs-6 mt-1">Walt Disney Pictures</li>
+                                <li class="fw-light fs-6 mt-1">Pixar</li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="movie-country-container">
+                            <h6 class="fw-normal text-start">País</h6>
+                            <ul id="movie-countries" class="">
+                                <li class="fw-light fs-6 mt-1">Estados Unidos</li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="movie-languages-container">
+                            <h6 class="fw-normal text-start">Idiomas</h6>
+                            <ul id="movie-languages" class="">
+                                <li class="fw-light fs-6 mt-1">Ingles</li>
+                                <li class="fw-light fs-6 mt-1">Español</li>
+                                <li class="fw-light fs-6 mt-1">Frances</li>
+                                <li class="fw-light fs-6 mt-1">Portugues</li>
+                            </ul>
+                        </div>
+
+                        <!-- Lo de abajo se debe implementar con una seccion diferent de la api de la que se venia trabajando -->
+
+                        <!-- <hr> -->
+
+                        <!-- <div class="movie-studios">
+                            <h6 class="fw-normal text-start">Nombres Alternativos</h6>
+                            <ul class="">
+                                <li class="fw-light fs-6 mt-1">Inside Out</li>
+                                <li class="fw-light fs-6 mt-1">Inside Out</li>
+                                <li class="fw-light fs-6 mt-1">Inside Out</li>
+                                <li class="fw-light fs-6 mt-1">Inside Out</li>
+                            </ul>
+                        </div> -->
+
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+                        tabindex="0">
+
+                        <div class="movie-genres-container">
+                            <h6 class="fw-normal text-start">Generos</h6>
+                            <ul id="movie-genres" class="">
+                                <li class="fw-light fs-6 mt-1">Comedia</li>
+                                <li class="fw-light fs-6 mt-1">Animacion</li>
+                                <li class="fw-light fs-6 mt-1">Aventura</li>
+                                <li class="fw-light fs-6 mt-1">Familiar</li>
+                            </ul>
+                        </div>
+
+                        <!-- Misma razon que nombres alternativos -->
+
+                        <!-- <hr>
+
+                        <div class="movie-studios">
+                            <h6 class="fw-normal text-start">Temas</h6>
+                            <ul class="">
+                                <li class="fw-light fs-6 mt-1">Nombre Tematica</li>
+                                <li class="fw-light fs-6 mt-1">Nombre Tematica</li>
+                                <li class="fw-light fs-6 mt-1">Nombre Tematica</li>
+                                <li class="fw-light fs-6 mt-1">Nombre Tematica</li>
+                                <li class="fw-light fs-6 mt-1">Nombre Tematica</li>
+                            </ul>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="details ">
+                <nav class="my-4">
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                        <button class="nav-link active fw-light fs-6 d-flex align-items-center" id="nav-home-tab"
+                            data-bs-toggle="tab" data-bs-target="#review-everyone" type="button" role="tab"
+                            aria-controls="review-everyone" aria-selected="false">Todos</button>
+
+                        <button class="nav-link fw-light fs-6 d-flex align-items-center" id="nav-profile-tab"
+                            data-bs-toggle="tab" data-bs-target="#review-following" type="button" role="tab"
+                            aria-controls="review-following" aria-selected="false">Siguiendo</button>
+
+                    </div>
+                </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+
+                    <div class="tab-pane fade active show" id="review-everyone" role="tabpanel"
+                        aria-labelledby="nav-home-tab" tabindex="0">
+                        <div class="watch-user-container mx-2">
+                            <div class="preview-user my-3 d-flex flex-column justify-content-center">
+
+                                <div class="preview-user-header d-flex flex-row justify-content-center w-100">
+                                    <div class="actor preview-user-pic mx-2">
+                                    </div>
+
+                                    <div class="preview-user-data w-75 ms-2">
+
+                                        <div class="preview-user-header d-flex justify-content-between">
+                                            <h6 class="fw-light mt-1 text-start"> Juanito Alimaña </h6>
+                                            <div
+                                                class="preview-user-stars group-stars d-flex flex-row justify-content-around">
+
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <p class="lead text-left my-2 mx-4">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis odio provident,
+                                    expedita sequi nihil.
+                                </p>
+
+                            </div>
+
+                            <hr>
+
+                            <div class="preview-user my-3 d-flex flex-column justify-content-center">
+
+                                <div class="preview-user-header d-flex flex-row justify-content-center w-100">
+                                    <div class="actor preview-user-pic mx-2">
+                                    </div>
+
+                                    <div class="preview-user-data w-75 ms-2">
+
+                                        <div class="preview-user-header d-flex justify-content-between">
+                                            <h6 class="fw-light mt-1 text-start"> Juanito Alimaña </h6>
+                                            <div
+                                                class="preview-user-stars group-stars d-flex flex-row justify-content-around">
+
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <p class="lead text-left my-2 mx-4">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis odio provident,
+                                    expedita sequi nihil.
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="review-following" role="tabpanel" aria-labelledby="nav-home-tab"
+                        tabindex="0">
+                        <div class="watch-user-container mx-2">
+
+                            <div class="preview-user my-3 d-flex flex-column justify-content-center">
+
+                                <div class="preview-user-header d-flex flex-row justify-content-center w-100">
+                                    <div class="actor preview-user-pic mx-2">
+                                    </div>
+
+                                    <div class="preview-user-data w-75 ms-2">
+
+                                        <div class="preview-user-header d-flex justify-content-between">
+                                            <h6 class="fw-light mt-1 text-start"> Juanito Alimaña </h6>
+                                            <div
+                                                class="preview-user-stars group-stars d-flex flex-row justify-content-around">
+
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <p class="lead text-left my-2 mx-4">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis odio provident,
+                                    expedita sequi nihil.
+                                </p>
+
+                            </div>
+
+                            <hr>
+
+                            <div class="preview-user my-3 d-flex flex-column justify-content-center">
+
+                                <div class="preview-user-header d-flex flex-row justify-content-center w-100">
+                                    <div class="actor preview-user-pic mx-2">
+                                    </div>
+
+                                    <div class="preview-user-data w-75 ms-2">
+
+                                        <div class="preview-user-header d-flex justify-content-between">
+                                            <h6 class="fw-light mt-1 text-start"> Juanito Alimaña </h6>
+                                            <div
+                                                class="preview-user-stars group-stars d-flex flex-row justify-content-around">
+
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="star">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <p class="lead text-left my-2 mx-4">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis odio provident,
+                                    expedita sequi nihil.
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <a class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#movieReview"
+                aria-controls="offcanvasRight" id="btn-review">
+
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                     class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                     <path
                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
                 </svg>
-            </button>
+
+            </a>
+
+
+            <!-- Boton para Abrir Pantalla de Acciones -->
+            <!-- <button class="btn btn-primary" type="button" id="btn-action" aria-controls="offcanvasBottom">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </button> -->
             <!-- Boton para Abrir Pantalla de Acciones -->
 
 
             <!-- Inicio de Pantalla de Acciones para la pelicula -->
-            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="actionDetails"
+            <!-- <div class="offcanvas offcanvas-bottom" tabindex="-1" id="actionDetails"
                 aria-labelledby="offcanvasBottomLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Acciones</h5>
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Lista de Acciones</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body small">
                     lorem*1000
                 </div>
-            </div>
+            </div> -->
             <!-- Fin de Pantalla de Acciones para la pelicula -->
 
         </div>
@@ -257,29 +703,83 @@
     <!-- Fin Pantalla Detalles Pelicula -->
 
 
+    <!-- Inicio Pantalla Resenias -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="movieReview" aria-labelledby="offcanvasRightLabel"
+        data-bs-theme="dark">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="movieTitle">Review</h5>
+            <input id="MovieID" class="d-none" type="text">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <hr class="my-1">
+        <div class="offcanvas-body">
+            <form class="row g-1 needs-validation" id="review-form" novalidate>
+                <div class="col-md-4 d-flex flex-row justify-content-between align-items-center">
+                    <h5 class="h5 fw-normal" id="movie-title-mini">Intensamente 2</h5> <!-- Titulo -->
+                    <img id="posterMini" class="img-fluid" src="./img/assets/poster.jpg" alt="Poster.png">
+                </div>
+                <hr class="my-2">
+                <div class="col-md-4">
+                    <label for="Text" class="form-label">Review</label>
+                    <textarea class="form-control" id="Text" name="Text" required></textarea>
+                    <div class="invalid-feedback">
+                        Set Input!
+                    </div>
+                </div>
+                <hr class="my-3">
+                <div class="col-md-4">
+                    <label for="Score" class="form-label">Rating</label>
+                    <div class="container d-flex flex-row justify-content-center">
+                        <div class="star-rating w-75 d-flex flex-row-reverse justify-content-evenly">
+                            <input type="radio" id="5-stars" name="rating" value="5" />
+                            <label for="5-stars" class="star">&#9733;</label>
+                            <input type="radio" id="4-stars" name="rating" value="4" />
+                            <label for="4-stars" class="star">&#9733;</label>
+                            <input type="radio" id="3-stars" name="rating" value="3" />
+                            <label for="3-stars" class="star">&#9733;</label>
+                            <input type="radio" id="2-stars" name="rating" value="2" />
+                            <label for="2-stars" class="star">&#9733;</label>
+                            <input type="radio" id="1-star" name="rating" value="1" />
+                            <label for="1-star" class="star">&#9733;</label>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-3">
+                <div class="col-md-4 my-2">
+                    <input class="form-check-input" type="checkbox" id="Spoiler">
+                    <label class="form-check-label" for="Spoiler">
+                        Spoiler
+                    </label>
+                    <div class="invalid-feedback">
+                        Set Input!
+                    </div>
+                </div>
+                <hr class="my-3">
+                <div class="col-12 d-flex justify-content-end">
+                    <button id="submit-review" class="btn btn-primary" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-lg"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                        </svg></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Fin Pantalla Resenias -->
 
-    <!-- <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center" id="btn-review"
-        data-bs-toggle="modal" data-bs-target="#form-review" data-bs-whatever="@mdo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-            class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-            <path
-                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
-        </svg>
-    </button> -->
-
-    <script src="cordova.js"></script>
     <script src="js/index.js"></script>
     <script src="./library/Jquery/Jquery.js"></script>
     <script src="./library/sweetAlert/sweetalert2.min.js"></script>
     <script src="./library/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="./library/select2/select2.js"></script>
-    <script src="./js/main/main.js"></script>
-
+    <!-- <script type="module" src="./js/sesion/sesion_check.js"></script> -->
+    <script type="module" src="./js/main/main.js"></script>
+    <!-- <script src="./js/sesion/sesion.js"></script> -->
     <script src="./js/review/search.js"></script>
     <script src="./js/review/review.js"></script>
     <script src="./js/sesion/logout.js"></script>
 
-    <script src="./js/onePage/movieDetails.js"></script>
+    <script type="module" src="./js/onePage/movieDetails.js"></script>
 </body>
-
 </html>

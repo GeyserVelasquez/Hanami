@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepos</title>
+    <link rel="stylesheet" href="./CSS/Styles.css">
+</head>
+<body>
+    <section id="Nepos">
+        <section id="headerNepos">
+            <div id="logo">
+                <img src="./Img/Logo.svg" alt="Logo">
+                <h1>Nepos</h1>
+            </div>
+            <div id="menuButtonHaver">
+                <button id="menu">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </button>
+            </div>
+        </section>
+        <section id="chatBody">
+            <section id="messages">
+                <!-- <div class="userBubble">
+                    <span>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </span>
+                </div>
+                <div class="neposBubble">
+                    <span>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </span>
+                </div> -->
+            </section>
+        </section>
+
+        <section id="inputHaver">
+            <textarea id="userPrompt" placeholder="Your text here..."></textarea>
+        </section>
+    </section>
+
+    <script type="importmap">
+        {
+        "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+        }
+    </script>
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+        async function run() {
+        const API_KEY = "AIzaSyBOI0Y7S8O-AU3GMD1iwnKfQTK_5fabPkE";
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const chat = model.startChat({
+            history: [
+            {
+                role: "user",
+                parts: [{ text: "Hello, I have 2 dogs in my house." }],
+            },
+            {
+                role: "model",
+                parts: [{ text: "Great to meet you. What would you like to know?" }],
+            },
+            ],
+            generationConfig: {
+            maxOutputTokens: 100,
+            },
+        });
+        const userPrompt = document.getElementById('userPrompt');
+        let prompt = '';
+        try {
+            userPrompt.addEventListener('input', function() {
+            prompt = userPrompt.value;
+            });
+    
+            userPrompt.addEventListener('keydown', async function(event) {
+            if (event.key === 'Enter') {
+                const result = await chat.sendMessage(prompt);
+                const response = await result.response;
+                const text = response.text();
+                console.log('AI:', text);
+                prompt = '';
+            }
+            });
+        } catch (error) {
+            console.error('Error:', error);
+        }
+        }
+        run();
+    </script>
+    <script src="./JS/inputBar.js"></script>
+    <script src="./JS/menu.js"></script>
+</body>
+</html>

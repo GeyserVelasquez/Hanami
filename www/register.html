@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="./css/register.css">
-    <meta http-equiv="Content-Security-Policy" content="script-src https://*.000webhostapp.com http://localhost/">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' http://localhost:3010 https://.000webhostapp.com; connect-src 'self' https://.themoviedb.org http://localhost:3010 https://*.000webhostapp.com; img-src 'self' https://image.tmdb.org; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
 
 <body>
     <div class="app">
@@ -55,7 +55,7 @@
         </section>
     </div>
     <!-- <script src="cordova.js"></script> -->
-    <script src="./library/Jquery/Jquery.js"></script>
+    <script src="./js/cdn/Jquery.js"></script>
     <script src="js/index.js"></script>
     <script src="./js/sesion/register.js"></script>
 </body>

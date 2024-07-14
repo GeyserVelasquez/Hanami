@@ -6,10 +6,8 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/register.css">
-        <meta http-equiv="Content-Security-Policy" content="script-src https://*.000webhostapp.com http://localhost/ https://cdn.jsdelivr.net">
-        <link rel="stylesheet" href="./library/sweetAlert/sweetalert2.min.css">
-
+        <link rel="stylesheet" href="css/login.css">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' http://localhost:3010 https://.000webhostapp.com; connect-src 'self' https://.themoviedb.org http://localhost:3010 https://*.000webhostapp.com; img-src 'self' https://image.tmdb.org; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
         <title>Hanami | Ingresar</title>
     </head>
     <body>
@@ -20,9 +18,35 @@
                     <div class="header-div-contenedor-item2"><img src="img/logo.png" class="logo"></div>
                 </div>
             </header>
+
+                <!-- fondo gradiente -->
+                <!-- <div class="gradient-bg">
+                    <svg viewBox="0 0 100vw 100vw" xmlns='http://www.w3.org/2000/svg' class="noiseBg">
+                        <filter id='noiseFilterBg'>
+                            <feTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch' />
+                        </filter>
+                        <rect width='100%' height='100%' preserveAspectRatio="xMidYMid meet" filter='url(#noiseFilterBg)' />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="svgBlur">
+                        <defs>
+                            <filter id="goo">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                                <feBlend in="SourceGraphic" in2="goo" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <div class="gradients-container">
+                        <div class="g1"></div>
+                        <div class="g2"></div>
+                        <div class="g3"></div>
+                        <div class="g4"></div>
+                        <div class="g5"></div>
+                    </div>
+                </div> -->
             <section>
                 <form class="register-contenedor" id="loginForm">
-                    <div class="register-contenedor-item1">INGRESAR</div>
+                    <div class="register-contenedor-item1">BIENVENIDO DE VUELTA</div>
                     <div class="register-contenedor-item2">
                         <div class="register-contenedor-item2-contenedor-item1">Nombre de Usuario</div>
                         <div class="register-contenedor-item2-contenedor-item2"><input class="input-mail" type="text"  name="UserName"></div>
@@ -35,9 +59,8 @@
             </section>
         </div>
         <script src="cordova.js"></script>
-        <script src="./library/Jquery/Jquery.js"></script>
-        <script src="./library/sweetAlert/sweetalert2.min.js"></script>
+        <script src="./js/cdn/Jquery.js"></script>
         <script src="js/index.js"></script>
-        <script type="module" src="./js/sesion/login.js"></script>
+        <script src="./js/sesion/login.js"></script>
     </body>
 </html>
